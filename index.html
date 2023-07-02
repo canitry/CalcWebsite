@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <head>
 	<title>Calculator</title>
+	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-	<div id='calculator'>
-		
-		<div class ='calcBtn'>
-			<button id ='1'>1</button>
-			<button id ='2'>2</button>
-			<button id ='3'>3</button>
+	<script src="calc.js"></script>
+	<div id="calculator">
+		<p id = "display"> HI </p>
+		<div id = "header"></div>
+		<div class ="calcBtn">
+			<button class="digit" id ="7">7</button>
+			<button class="digit" id ="8">8</button>
+			<button class="digit" id ="9">9</button>
+			<button class="op" id ="divide">/</button>
 		</div>
-		<div id ='calcBtn'>
-			<button id ='4'>4</button>
-			<button id ='5'>5</button>
-			<button id ='6'>6</button>
+		<div class ="calcBtn">
+			<button class="digit" id ="4">4</button>
+			<button class="digit" id ="5">5</button>
+			<button class="digit" id ="6">6</button>
+			<button class="op" id ="multiply">*</button>
 		</div>
-		<div id ='calcBtn'>
-			<button id ='7'>7</button>
-			<button id ='8'>8</button>
-			<button id ='9'>9</button>
+		<div class ="calcBtn">
+			<button class="digit" id ="1">1</button>
+			<button class="digit" id ="2">2</button>
+			<button class="digit" id ="3">3</button>
+			<button class="op" id ="subtract">-</button>
+		</div>
+		<div class ="calcBtn">
+			<button class="digit" id ="0">0</button>
+			<button class="digit" id =".">.</button>
+			<button class="ans" id ="equals">=</button>
+			<button class="op" id ="add">+</button>
 		</div>
 	</div>
 </html>
