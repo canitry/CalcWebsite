@@ -7,8 +7,7 @@ const States = {
     Dig1: 0,
     Op: 1,
     Dig2: 2,
-    Eq: 3,
-    Start: 4
+    Start: 3
 }
 
 let answer = 0;
@@ -57,11 +56,6 @@ function digPressed(id){
             myState = States.Dig2;
             disp.innerHTML += id;
             break;
-        case States.Eq:
-            sNum1 = id;
-            myState = States.Dig1;
-            disp.innerHTML += id;
-            break;
         default:
             reset();
             throw new Error("uncaught operation")
@@ -90,8 +84,6 @@ function opPressed(id){
             myState = States.Op;
             break;
         case States.Dig1:
-            num1 = parseFloat(sNum1);
-            sNum1 = "";
             myState = States.Op;
             break;
         case States.Op:
@@ -100,11 +92,6 @@ function opPressed(id){
             return;
         case States.Dig2:
             ansPressed();
-            myState = States.Op;
-            break;
-        case States.Eq:
-            num1 = parseFloat(sNum1);
-            sNum1 = "";
             myState = States.Op;
             break;
         default:
@@ -134,6 +121,9 @@ function opPressed(id){
 }
 
 function ansPressed(){
+    if (sNum1 != ""){
+        num1 = parseFloat(sNum1);
+    }
     if (currOp != null){
         num2 = parseFloat(sNum2);
         num1 = currOp();
@@ -144,7 +134,7 @@ function ansPressed(){
     sNum2 = "";
     ans = 0;
     currOp = null;
-    myState = States.Eq;
+    myState = States.Dig1;
     console.log(ans);
 }
 
